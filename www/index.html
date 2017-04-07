@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <title>Hello World</title>
+	
+	<!--Foundation css-->
+	<link rel="stylesheet" href="./css/foundation.css">
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            // In the beggining hide all other windows
+            $("#main").hide();
+            $("#meet").hide();
+            $("#coffe").hide();
+            $("#directions").hide();
+            $("#meal").hide();
+            $("#beach").hide();
+            $("#coffee").hide();
+        });
+    </script>
+    <div id="index">
+        <div class="header">
+		<b><h1>Learn Greek</h1></b>
+        </div>
+        <div class="greeting">
+            <p>You have propably heard of Kostas, it's a typical Greek name. Well Kostas is here to help you, 
+                you will learn with him how to speak basic Greek.</p>
+
+            <p>He will guide you from how to start a basic conversation, to how to order coffee, ask for 
+            directions, say how much you enjoy drinking ouzo and much more.</p>
+
+            <a href="#" class="expanded button" id="go_main">Ask Kostas!</a>
+            <!--this is how to load a music file
+
+            <audio controls>
+              <source src="audio_name.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            -->
+        </div>
+    </div>
+    <div id="main">
+        <div class="menu">
+            <a href="#" id="go_meet" class="expanded button">Meeting a Greek one</a><br>
+            <a href="#" id="go_meal" class="expanded button">Meal time!</a><br>
+            <a href="#" id="go_directions" class="expanded button">I am lost I need directions</a><br>
+            <a href="#" id="go_beach" class="expanded button">On the beach</a><br>
+            <a href="#" id="go_back1" class="expanded button">Go Back</a><br>
+	   </div>
+    </div>
+    <div id="meet">
+        <div class="meet">
+            <b><h1>Meet Someone</h1></b>
+        </div>
+        <div class="greeting">
+
+            <ul>	
+                <li><p>English: Good morning!<br>
+                Greeklish: Kalimera!<br>
+                Greek: Καλημέρα!<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/kalimera.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Good afternoon!<br>
+                Greeklish: Kalispera!<br>
+                Greek: Καλησπέρα<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/kalispera.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: What is your name?<br>
+                Greeklish: Pos se lene?<br>
+                Greek: Πώς σε λένε?<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/pws_se_lene.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: My name is Jack.<br>
+                Greeklish: To onoma mou einai Jack.<br>
+                Greek: Το όνομα μου είναι Jack.<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/to_onoma_mou_einai.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Where are you from?<br>
+                Greeklish: Apo pou eisai?<br>
+                Greek: Από που είσαι?<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/apo_pou.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I am from England.<br>
+                Greeklish: Eimai apo tin Agglia.<br>
+                Greek: Είμαι από την Αγγλία.<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/eimai_apo.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: What do you study?<br>
+                Greeklish: Ti spoudazeis?<br>
+                Greek: Τι σπουδάζεις?<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/ti_spudazeis.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I study Maths.<br>
+                Greeklish: Spoudazw Mathimatika.<br>
+                Greek: Σπουδάζω μαθηματικά.<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/spudazw.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Where do you live?<br>
+                Greeklish: Pou meneis?<br>
+                Greek: Που μένεις?<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/pou_meneis.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I live in Athens.<br>
+                Greeklish: Menw stin Athina.<br>
+                Greek: Μένω στην Αθήνα.<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/menw_stin.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I like Greece.<br>
+                Greeklish: Mou aresei i Ellada.<br>
+                Greek: Μου αρέσει η Ελλάδα.<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/mou_aresei_ellada.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: You are beatiful.<br>
+                Greeklish: Eisai omorfi.<br>
+                Greek: Είσαι όμορφη.<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/omorfi.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: You are handsome.<br>
+                Greeklish: Eisai omorfos.<br>
+                Greek: Είσαι όμορφος.<br></p>
+                <audio controls>
+                    <source src="./recordings/meet_someone/omorfos.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+            </ul>
+            <a href="#" id="go_back2" class="expanded button">Go Back</a>
+            <!--this is how to load a music file
+
+            <audio controls>
+              <source src="audio_name.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            -->
+        </div>
+    </div>
+    <div id="coffee">
+        <div class="coffee">
+            <b><h1>Drink Coffee</h1></b>
+        </div>
+        <div class="greeting">
+
+            <ul>	
+                <li><p>English: Let's go for a coffee.<br>
+                Greeklish: Pame gia enan kafe.<br>
+                Greek: Πάμε για έναν καφέ.<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/pame_gia.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I want a double espresso.<br>
+                Greeklish: Thelw enan diplo espresso.<br>
+                Greek: Θέλω έναν διπλό εσπρέσο.<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/diplo_es.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I will drink a greek coffee.<br>
+                Greeklish: Tha piw enan elliniko kafe.<br>
+                Greek: Θα πιω έναν ελληνικό καφέ.<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/ellinikos.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Where is the bathroom?<br>
+                Greeklish: Pou einai i toualeta?<br>
+                Greek: Που είναι η τουαλέτα?<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/toualeta.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I like filter coffee.<br>
+                Greeklish: Mou aresei o kafes filtrou.<br>
+                Greek: Μου αρέσει ο καφές φίλτρου.<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/filtrou.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Can I have a water please?<br>
+                Greeklish: Mporw na exw ena nero parakalw?<br>
+                Greek: Μπορώ να έχω ένα νερό παρακαλώ?<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/nero.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Can I have some biscuits please?<br>
+                Greeklish: Mporw na exw liga biskota parakalw?<br>
+                Greek: Μπορώ να έχω λίγα μπισκότα παρακαλώ?<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/biskota.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: The bill please!<br>
+                Greeklish: Ton logariasmo parakalw!<br>
+                Greek: Τον λογαριασμό παρακαλώ!<br></p>
+                <audio controls>
+                    <source src="./recordings/coffee/logariasmo.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+
+            </ul>
+            <a href="#" id="go_back3" class="expanded button">Go Back</a>
+            <!--this is how to load a music file
+
+            <audio controls>
+              <source src="audio_name.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            -->
+        </div>
+    </div>
+    <div id="directions">
+        <div class="directions">
+            <b><h1>I need directions</h1></b>
+        </div>
+        <div class="greeting">
+
+            <ul>	
+                <li><p>English: Go straight ahead.<br>
+                Greeklish: Pigene eftheia.<br>
+                Greek: Πήγαινε ευθεία.<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/eutheia.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Turn left.<br>
+                Greeklish: Stripse aristera.<br>
+                Greek: Στρίψε αριστερά<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/aristera.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Turn right.<br>
+                Greeklish: Stripse deksia.<br>
+                Greek: Στρίψε δεξιά.<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/deksia.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: How to reach the urban train station?<br>
+                Greeklish: Pws ftanw stin stasi tou metro?<br>
+                Greek: Πώς φτάνω στην στάση του μετρό?<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/metro.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: How can I go to Athens?<br>
+                Greeklish: Pws mporw na ftasw stin Athina?<br>
+                Greek: Πώς μπορώ να φτάσω στην Αθήνα?<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/athina.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Where is the airport?<br>
+                Greeklish: Pou einai to aerodromio?<br>
+                Greek: Που είναι το αεροδρόμιο?<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/aerodromio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I need some directions.<br>
+                Greeklish: Xreiazomai odigies.<br>
+                Greek: Χρειάζομαι οδηγίες.<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/odigies.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Thank you for your advice!<br>
+                Greeklish: Euxaristw gia tis sumboules!<br>
+                Greek: Ευχαριστώ για τις συμβουλές!<br></p>
+                <audio controls>
+                    <source src="./recordings/directions/sumboules.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+            </ul>
+            <a href="#" id="go_back4" class="expanded button">Go Back</a>
+            <!--this is how to load a music file
+
+            <audio controls>
+              <source src="audio_name.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            -->
+        </div>
+    </div>
+    <div id="meal">
+        <div class="meal">
+            <b><h1>Meal Time!</h1></b>
+        </div>
+        <div class="greeting">
+
+            <ul>	
+                <li><p>English: Let's have a meal!<br>
+                Greeklish: As fame ena geuma!<br>
+                Greek: Ας φάμε ένα γεύμα!<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/geuma.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I want to order.<br>
+                Greeklish: Thelw na parageilw.<br>
+                Greek: Θέλω να παραγγείλω.<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/paraggeilw.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: For main dish I'll have a steak.<br>
+                Greeklish: Ws kuriws piato tha faw mprizola.<br>
+                Greek: Ως κυρίως πιάτο θα φάω μπριζόλα.<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/mprizola.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I would like a salad.<br>
+                Greeklish: Tha ithela mia salata.<br>
+                Greek: Θα ήθελα μια σαλάτα.<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/salata.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I want some French fries.<br>
+                Greeklish: Thelw tiganites patates.<br>
+                Greek: Θέλω τηγανητές πατάτες.<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/patates.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I will drink some red wine.<br>
+                Greeklish: Tha piw kokino krasi.<br>
+                Greek: Θα πιώ κόκκινο κρασί.<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/krasi.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I would like some dessert.<br>
+                Greeklish: Tha ithela epidorpio.<br>
+                Greek: Θα ήθελα επιδόρπιο.<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/epidorpio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: The bill please!<br>
+                Greeklish: Ton logariasmo parakalw!<br>
+                Greek: Τον λογαριαμό παρακαλώ!<br></p>
+                <audio controls>
+                    <source src="./recordings/meal/logariasmo.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+            </ul>
+            <a href="#" id="go_back5" class="expanded button">Go Back</a>
+            <!--this is how to load a music file
+
+            <audio controls>
+              <source src="audio_name.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            -->
+        </div>
+    </div>
+    <div id="beach">
+        <div class="beach">
+		  <b><h1>On the beach</h1></b>
+	   </div>
+        <div class="greeting">
+
+            <ul>	
+                <li><p>English: Can I borrow your sun cream?<br>
+                Greeklish: Mporw na daneistw to antiliako sou?<br>
+                Greek: Μπορώ να δανειστώ το αντηλιακό σου?<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/antiliako.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: Is swimming allowed?<br>
+                Greeklish: Epitrepete to kolumpi?<br>
+                Greek: Επιτρέπεται το κολύμπι?<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/kolumpi.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: How deep is the sea?<br>
+                Greeklish: Poso batheia einai i thalasa?<br>
+                Greek: Πόσο βαθειά είναι η θάλασσα?<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/thalassa.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: You have a nice body!<br>
+                Greeklish: Exeis oraio soma!<br>
+                Greek: Έχεις ωραίο σώμα!<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/swma.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I am sunbathing.<br>
+                Greeklish: Kanw iliotherapeia.<br>
+                Greek: Κάνω ηλιοθεραπεία.<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/iliother.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I like your swimsuit<br>
+                Greeklish: Mou aresei to magio sou.<br>
+                Greek: Μου αρέσει το μαγιό σου.<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/magio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I want a coctail please.<br>
+                Greeklish: Thelw ena kokteil parakalw.<br>
+                Greek: Θέλω ένα κοκτέιλ παρακαλώ.<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/kokteil.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+
+                <li><p>English: I want an ice cream please.<br>
+                Greeklish: Thelw ena pagoto parakalo.<br>
+                Greek: Θέλω ένα παγωτό παρακαλώ.<br></p>
+                <audio controls>
+                    <source src="./recordings/beach/pagoto.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></li>
+            </ul>
+            <a href="#" id="go_back6" class="expanded button">Go Back</a>
+            <!--this is how to load a music file
+
+            <audio controls>
+              <source src="audio_name.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
+            -->
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+	<!--Foundation scripts-->
+    <script type="text/javascript" src="js/vendor/what-input.js"></script>
+    <script type="text/javascript" src="js/vendor/foundation.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Go to the main page
+            $("#go_main").click(function(){
+                $("#index").hide();
+                $("#main").show();
+            });
+            // Go to the meet someone page
+            $("#go_meet").click(function(){
+                $("#main").hide();
+                $("#meet").show();
+            });
+            // Go to the meal time page
+            $("#go_meal").click(function(){
+                $("#main").hide();
+                $("#meal").show();
+            });
+            // Go to the I need directions page
+            $("#go_directions").click(function(){
+                $("#main").hide();
+                $("#directions").show();
+            });
+            // Go to the on the beach page
+            $("#go_beach").click(function(){
+                $("#main").hide();
+                $("#beach").show();
+            });
+            // Go Back to the beggining
+            $("#go_back1").click(function(){
+                $("#main").hide();
+                $("#index").show();
+            });
+            
+            // Go Back to main menu
+            $("#go_back2").click(function(){
+                $("#meet").hide();
+                $("#main").show();
+            });
+            
+            // Go Back to main menu
+            $("#go_back3").click(function(){
+                $("#coffee").hide();
+                $("#main").show();
+            });
+            
+            $("#go_back4").click(function(){
+                $("#directions").hide();
+                $("#main").show();
+            });
+            
+            $("#go_back5").click(function(){
+                $("#meal").hide();
+                $("#main").show();
+            });
+            
+            $("#go_back6").click(function(){
+                $("#beach").hide();
+                $("#main").show();
+            });
+        });
+    </script>
+    <script>
+        admob.createBannerView();
+    </script>
+</body>
+
+</html>

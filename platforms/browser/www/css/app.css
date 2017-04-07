@@ -1,0 +1,105 @@
+/************************************************
+*               GREETING PAGE                   *
+*************************************************/
+.greeting{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+
+.greeting h2{
+	text-align: center;
+}
+
+.header {
+	padding-top: 15%;
+	padding-bottom: 20%;
+	background: url(../img/greeting_image.png) no-repeat;
+}
+
+.header h1{
+	text-align: center;
+	color: white;
+}
+
+/************************************************
+*               MAIN PAGE                       *
+*************************************************/
+.menu {
+	padding-left:10%;
+	padding-right:10%;
+	padding-top: 10%;
+}
+
+.menu a{
+	margin-top:5%;
+}
+/************************************************
+*               MEET SOMEONE                    *
+*************************************************/
+.meet {
+	padding-top: 15%;
+	padding-bottom: 20%;
+	background: url(../img/meet_someone.png) no-repeat;
+}
+
+.meet h1{
+	text-align: center;
+	color: white;
+}
+
+/************************************************
+*               COFFEE                          *
+*************************************************/
+.coffee {
+	padding-top: 15%;
+	padding-bottom: 20%;
+	background: url(../img/coffee.png) no-repeat;
+}
+
+.coffee h1{
+	text-align: center;
+	color: white;
+}
+
+/************************************************
+*               MEAL                            *
+*************************************************/
+.meal {
+	padding-top: 15%;
+	padding-bottom: 20%;
+	background: url(../img/meal.png) no-repeat;
+}
+
+.meal h1{
+	text-align: center;
+	color: white;
+}
+
+/************************************************
+*               DIRECTIONS                      *
+*************************************************/
+.directions {
+	padding-top: 15%;
+	padding-bottom: 20%;
+	background: url(../img/road.png) no-repeat;
+}
+
+.directions h1{
+	text-align: center;
+	color: white;
+}
+
+/************************************************
+*               BEACH                           *
+*************************************************/
+.beach {
+	padding-top: 15%;
+	padding-bottom: 20%;
+	background: url(../img/beach.png) no-repeat;
+}
+
+.beach h1{
+	text-align: center;
+	color: white;
+}
